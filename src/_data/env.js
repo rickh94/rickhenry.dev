@@ -1,19 +1,15 @@
 require("dotenv").config();
 
-const common = {
-  url: process.env.URL,
-};
-
 const testing = {
   formsparkURL: process.env.FORMSPARK_TESTING,
   botpoisonPublicKey: process.env.BOTPOISON_TESTING,
-  ...common,
+  url: "http://localhost:8080",
 };
 
 const production = {
   formsparkURL: process.env.FORMSPARK_PRODUCTION,
   botpoisonPublicKey: process.env.BOTPOISON_PRODUCTION,
-  ...common,
+  url: "https://rickhenry.dev",
 };
 
 module.exports = process.env.ELEVENTY_PRODUCTION ? production : testing;
