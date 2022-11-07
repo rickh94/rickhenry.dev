@@ -1,3 +1,244 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aec826dad23834e0ceeb4bd6e27449251c84dd8ed84555e0dc50817998401ff8
-size 3842
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+
+
+.nav-link {
+    @apply font-semibold text-white text-xl cursor-pointer rounded px-2;
+}
+
+.nav-link:hover {
+    @apply transform -translate-y-0.5 ease-in-out duration-300;
+}
+
+.nav-link:focus {
+    @apply transform -translate-y-0.5 ease-in-out duration-300 ring-2 ring-white ring-offset-slate-900 ring-offset-2 outline-none;
+}
+
+.selectable:focus {
+    @apply ring-2 ring-white ring-offset-slate-900 ring-offset-2 outline-none rounded;
+}
+
+.normal-transition {
+    @apply transition duration-200 ease-in-out;
+}
+
+.fast-transition {
+    @apply transition duration-100 ease-in-out;
+}
+
+.slow-transition {
+    @apply transition duration-300 ease-in-out;
+}
+
+.a-fade-in {
+    animation: fadeIn;
+}
+
+.a-delay {
+    animation-fill-mode: forwards;
+}
+
+.a-delay-100 {
+    animation-delay: 100ms;
+}
+
+.a-delay-200 {
+    animation-delay: 200ms;
+}
+
+.a-delay-300 {
+    animation-delay: 300ms;
+}
+
+.a-delay-500 {
+    animation-delay: 500ms;
+}
+
+.a-delay-333 {
+    animation-delay: 333ms;
+}
+
+.a-delay-666 {
+    animation-delay: 666ms;
+}
+
+.a-delay-250 {
+    animation-delay: 250ms;
+}
+
+.a-delay-750 {
+    animation-delay: 750ms;
+}
+
+.a-ease-out {
+    animation-timing-function: ease-out;
+}
+
+.a-ease-in-out {
+    animation-timing-function: ease-in-out;
+}
+
+.a-duration-1000 {
+    animation-duration: 1s;
+}
+
+.a-duration-2000 {
+    animation-duration: 2s;
+}
+
+.text-shadow {
+    text-shadow: 1px 1px 12px rgb(51 65 85);
+}
+
+.text-shadow-sm {
+    text-shadow: 1px 1px 16px rgb(51 65 85);
+}
+
+
+.-z-10 {
+    z-index: -10;
+}
+
+.form-control {
+    @apply text-white transition ease-out duration-200;
+}
+
+.form-control:focus-within {
+    @apply text-blue-500 -translate-y-1;
+    text-shadow: 1px 1px 1px 8px #fff;
+}
+
+.form-control > input {
+    @apply text-black bg-white w-full rounded-sm px-2 py-1 placeholder-gray-500 shadow  transition ease-out duration-200;
+}
+
+.form-control > input:focus {
+    @apply shadow-lg bg-blue-50 outline-none;
+}
+
+.submit-button {
+    @apply w-full h-10 font-bold px-6 rounded-sm bg-white text-black outline-none transition ease-in-out duration-200 flex items-center justify-center gap-2;
+}
+
+.submit-button:hover {
+    @apply transform -translate-y-1;
+}
+
+.submit-button:focus {
+    @apply outline-none;
+}
+
+.submit-button:disabled {
+    @apply bg-gray-600;
+}
+
+.pinned {
+    order: 1;
+}
+
+.markdown {
+    * {
+        color: white;
+    }
+    h1 {
+        @apply text-5xl mb-6 font-bold;
+    }
+
+    h2 {
+        @apply text-4xl mb-4 font-bold;
+    }
+
+    h3 {
+        @apply text-3xl mb-4 font-bold;
+    }
+
+    h4 {
+        @apply text-2xl mb-4 font-bold;
+    }
+
+    h5 {
+        @apply text-xl mb-4 font-bold;
+    }
+
+    h6 {
+        @apply text-lg mb-4 font-bold;
+    }
+
+    p {
+        @apply mb-4;
+    }
+
+    a {
+        @apply font-bold underline;
+    }
+
+    ul {
+        @apply mb-4 list-disc px-6;
+    }
+
+    hr {
+        @apply border-stone-800 mb-4;
+
+    }
+}
+
+.blog-post {
+    * {
+        color: white;
+    }
+    a {
+        @apply text-rose-400;
+    }
+    figure {
+        background-image: url('/assets/img/waves-background1.svg');
+        padding: 1.25rem 1.25rem;
+        border-radius: 5px;
+        margin: 1rem 0;
+    }
+
+    figcaption {
+        text-align: center;
+        margin-top: 0.25rem;
+        font-style: italic;
+    }
+
+    img, video {
+        border-radius: 5px;
+        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+        margin: 0 auto;
+    }
+
+}
+
+
+@screen sm {
+    .submit-button {
+        @apply w-auto gap-1;
+    }
+
+    .submit-button:hover {
+        @apply transform -translate-x-1 translate-y-0;
+    }
+}
+
+@media (prefers-reduced-motion) {
+    .a-fade-in {
+        animation: none;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
