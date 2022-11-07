@@ -5,7 +5,6 @@ const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const EleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const Image = require('@11ty/eleventy-img');
-const { compress } = require('eleventy-plugin-compress');
 
 function imageShortcode(src, cls, alt, sizes) {
   let options = {
@@ -99,11 +98,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addNunjucksShortcode("image", imageShortcode);
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
   eleventyConfig.addJavaScriptFunction("image", imageShortcode);
-
-  // eleventyConfig.addPlugin(compress, {
-  //   enabled: process.env.ELEVENTY_PRODUCTION,
-  //   algorithm: ['brotli', 'gzip'],
-  // });
 
   return {
     dir: {
