@@ -112,7 +112,7 @@ def create_user():
     """Handle creation of new users from the user creation form."""
     # ... snip ...
     except IntegrityError:
-        return render_template(
+        return render_template/(
             "auth/_partials/user_creation_form.html",
             error="That username or email address is already in use. "
             "Please enter a different one.",
@@ -304,7 +304,9 @@ Ok let's try out this new functionality.
 
 <figure>
     <video width="1300" height="1364" controls>
-        <source src="/assets/img/blog/2022/06/flask-webauthn-demo-login-2.mp4" type="video/mp4">
+        <source src="/assets/vid/blog/2022/2022-06-20-flask-webauthn-demo-login-2.av1.mp4" type="video/mp4; codecs=av01.0.05M.08,opus">
+        <source src="/assets/vid/blog/2022/2022-06-20-flask-webauthn-demo-login-2.hevc.mp4" type="video/mp4; codecs=hvc1">
+        <source src="/assets/vid/blog/2022/2022-06-20-flask-webauthn-demo-login-2.h264.mp4" type="video/mp4; codecs=avc1.4D401E,mp4a.40.2">
         Your browser does not support the video tag
     </video>
     <figcaption>Hey it works! Mostly...</figcaption>
@@ -453,7 +455,9 @@ Ok now this should make a bit more sense. Let's try it out again.
 
 <figure>
     <video width="1300" height="1364" controls>
-        <source src="/assets/img/blog/2022/06/flask-webauthn-demo-login-3.mp4" type="video/mp4">
+        <source src="/assets/vid/blog/2022/2022-06-20-flask-webauthn-demo-login-3.av1.mp4" type="video/mp4; codecs=av01.0.05M.08,opus">
+        <source src="/assets/vid/blog/2022/2022-06-20-flask-webauthn-demo-login-3.hevc.mp4" type="video/mp4; codecs=hvc1">
+        <source src="/assets/vid/blog/2022/2022-06-20-flask-webauthn-demo-login-3.h264.mp4" type="video/mp4; codecs=avc1.4D401E,mp4a.40.2">
         Your browser does not support the video tag
     </video>
     <figcaption>Ah, much better</figcaption>

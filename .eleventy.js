@@ -29,6 +29,16 @@ function imageShortcode(src, cls, alt, sizes) {
   return Image.generateHTML(metadata, imageAttributes);
 }
 
+function mdImageShortcode(src, alt, sizes, caption) {
+  const imgHTML = imageShortcode(src, "", alt, sizes);
+  return `
+  <figure>
+    ${imgHTML}
+    <figcaption>${caption}</figcaption>
+  </figure>
+  `
+}
+
 
 const now = String(Date.now());
 
@@ -98,6 +108,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addNunjucksShortcode("image", imageShortcode);
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
   eleventyConfig.addJavaScriptFunction("image", imageShortcode);
+
+  eleventyConfig.addNunjucksShortcode("mdimage", mdImageShortcode);
+  eleventyConfig.addLiquidShortcode("mdimage", mdImageShortcode);
+  eleventyConfig.addJavaScriptFunction("mdimage", mdImageShortcode);
 
   return {
     dir: {

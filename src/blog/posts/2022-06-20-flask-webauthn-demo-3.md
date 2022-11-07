@@ -510,16 +510,16 @@ Safari.
 Now we can `docker compose restart app` and see if our hard work paid off. After creating a new user, you should land
 on another page to set up biometric authentication.
 
-![Set up biometric authentication](/assets/img/blog/2022/06/flask-webauthn-setup-biometrics.png "Here we go!")
+{% mdimage "./src/blog/assets/img/2022/2022-06-20-flask-webauthn-setup-biometrics.png", "Set up biometric authentication", "300w, (min-width: 640px) 600w", "Here we go!" %}
 
 Clicking the button should bring up a browser dialog to choose an
 authentication method,
 
-![Touch ID Prompt](/assets/img/blog/2022/06/flask-webauthn-biometrics-prompt.png "Yes, I would like to use Touch ID.")
+{% mdimage "./src/blog/assets/img/2022/2022-06-20-flask-webauthn-biometrics-prompt.png", "TouchID Prompt", "300w, (min-width: 640px) 600w", "Yes, I would like to use Touch ID." %}
 
 then you should see an alert that it completed successfully.
 
-![Success](/assets/img/blog/2022/06/flask-webauthn-registration-success.png "It worked!")
+{% mdimage "./src/blog/assets/img/2022/2022-06-20-flask-webauthn-registration-success.png", "Success!", "300w, (min-width: 640px) 600w", "It worked!" %}
 
 Honestly, once all the infrastructure is in place, it's not terribly difficult to get working...but there was quite a
 lot of infrastructure to get to this point.

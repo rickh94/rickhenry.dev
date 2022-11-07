@@ -406,7 +406,9 @@ One more random note for no reason. I would never make such a mistake.*
 
 <figure>
     <video width="1300" height="1364" controls>
-        <source src="/assets/img/blog/2022/06/flask-webauthn-demo-login-1.mov" type="video/mp4">
+        <source src="/assets/vid/blog/2022/2022-06-20-flask-webauthn-demo-login-1.av1.mp4" type="video/mp4; codecs=av01.0.05M.08,opus">
+        <source src="/assets/vid/blog/2022/2022-06-20-flask-webauthn-demo-login-1.hevc.mp4" type="video/mp4; codecs=hvc1">
+        <source src="/assets/vid/blog/2022/2022-06-20-flask-webauthn-demo-login-1.h264.mp4" type="video/mp4; codecs=avc1.4D401E,mp4a.40.2">
         Your browser does not support the video tag
     </video>
     <figcaption>That's pretty cool right?</figcaption>

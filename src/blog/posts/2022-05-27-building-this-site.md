@@ -27,8 +27,9 @@ At this point I had switched from server side rendering to static rendering, whi
 but it means that everything needs to pull in correctly at render time, api keys, etc. I was now relying on several
 third-party services that I was using slightly out of spec.
 
-![Ghost CMS](https://user-images.githubusercontent.com/353959/66987533-40eae100-f0c1-11e9-822e-cbaf38fb8e3f.png "Ghost
-is a great Content Management System, just not right for my needs")
+{% mdimage "https://user-images.githubusercontent.com/353959/66987533-40eae100-f0c1-11e9-822e-cbaf38fb8e3f.png", "Ghost CMS Homepage", "300w, (max-width: 640px) 600w", "Ghost is a great Content Management System, just not right for my needs" %}
+
+[//]: # (![Ghost CMS]&#40;https://user-images.githubusercontent.com/353959/66987533-40eae100-f0c1-11e9-822e-cbaf38fb8e3f.png &#41;)
 
 ## Removing Ghost
 

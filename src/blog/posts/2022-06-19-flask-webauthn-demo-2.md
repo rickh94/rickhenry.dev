@@ -109,7 +109,7 @@ associated credentials.
 We created new database models, which means we need new migrations. We can create the migrations inside our docker
 container by running `docker compose run --rm app sh -c 'flask db migrate -m "Create user and credential tables"`.
 
-![Flask Migrate Output](/assets/img/blog/2022/06/flask-webauthn-migration-1-output.png "You should see something like this")
+{% mdimage "./src/blog/assets/img/2022/2022-06-19-flask-webauthn-migration-1-output.png", "Flask Migrate Output", "300w, (min-width: 640px) 600w", "You should see something like this" %}
 
 Apply the migrations by restarting the app with `docker compose restart app`. You should see a line in the output log
 with something like `Running upgrade -> [some hash], Create user and credential tables`.
@@ -217,7 +217,7 @@ def index():
 Let's check that this all works. Restart the app using `docker compose restart app`, then go to your ngrok url and
 verify that you can see the index page.
 
-![Flask WebAuthn Index Page](/assets/img/blog/2022/06/flask-webauthn-index.png "It should look something like this")
+{% mdimage "./src/blog/assets/img/2022/2022-06-19-flask-webauthn-index.png", "Flask WebAuthn Index Page", "300w, (min-width: 640px) 600w", "It should look something like this" %}
 
 ## Register a User
 
@@ -369,7 +369,7 @@ def register():
 Restart the app again with `docker compose restart app` and navigate to the register page. Our new form should be there,
 with the navbar we set up in `base.html`
 
-![Registration Form](/assets/img/blog/2022/06/flask-webauthn-registration-form.png "Look a form! We're starting to have actual functionality")
+{% mdimage "./src/blog/assets/img/2022/2022-06-19-flask-webauthn-registration-form.png", "Registration Form", "300w, (min-width: 640px) 600w", "Look a form! We're starting to have actual functionality" %}
 
 ### Creating a User in the database
 

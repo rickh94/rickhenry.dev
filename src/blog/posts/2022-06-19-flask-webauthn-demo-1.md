@@ -222,7 +222,7 @@ gets committed to version control.)
 Finally, you can run `docker compose up -d` to build the app and get it online. Then you can go to
 [http://localhost:5000](http://localhost:5000) and should see our hello world page.
 
-![Hello, world!](/assets/img/blog/2022/06/flask-webauthn-hello-world.png "It works!")
+{% mdimage "./src/blog/assets/img/2022/2022-06-19-flask-webauthn-hello-world.png", "Hello World", "300w, (min-width: 640px) 600w", "It works!" %}
 
 Now, in another window run `ngrok http 5000` and navigate to the url it shows, being sure to use https. Make sure to
 leave this window open or run it in the background with tmux or screen. Now you have a secure version of your website
