@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4c8abb33561b0e907999aae31871e8e12cebfa69aee49f77dab8ab6a79a87a88
-size 273
+---
+title: Online Presence
+icon: globe
+tags: service
+icon_color_class: text-indigo-500
+slug: automate-repetitive-tasks
+---
+
+Your presence online is more than your website. We can work together to make sure that your 
+advertising and social media are up-to-date and useful.

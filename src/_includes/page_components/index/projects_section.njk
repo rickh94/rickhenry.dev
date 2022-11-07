@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e3c47dd69aaa32fd5a10634e7c6a9c8e107838a440a7751fe438b8debb3497f1
-size 1304
+{% import "macros/index_project.njk" as index_project %}
+<main class="w-full bg-blue-700">
+  <header class="flex w-full justify-center sm:justify-start text-white mb-2 max-w-4xl mx-auto px-4 sm:px-10">
+    <h1 class="text-center sm:text-left font-bold text-white text-2xl sm:text-4xl text-shadow">
+      Things I've Made
+    </h1>
+  </header>
+  <section class="flex w-full justify-center sm:justify-start mb-4 sm:mb-6 max-w-4xl mx-auto px-4 sm:px-10">
+    <p class="text-center sm:text-left font-bold text-white text-base sm:text-lg text-shadow-sm">
+      Here are some of my favorite projects
+    </p>
+  </section>
+  <ul class="flex flex-col items-center list-none">
+    {% for project in collections.project |sortByIndex %}
+      {% if project.data.featured %}
+        {{ index_project.project(project.data.title, project.templateContent, project.data.img, project.data.url, project.data.snippet) }}
+      {% endif %}
+    {% endfor %}
+  </ul>
+  <div class="flex w-full justify-center mt-4">
+    <a href="/projects"
+       class="inline-flex items-center justify-center font-bold bg-white rounded px-4 py-2 text-black hover:transform hover:-translate-y-1 transition ease-in-out duration-200 selectable focus:-translate-y-1 focus:transform"
+    >
+      View More of my projects
+    </a>
+  </div>
+</main>

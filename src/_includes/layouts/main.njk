@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4cb589ed9861cba0dacde3dd1600c22aab49bedd5de549f51ecde4a12f6223a8
-size 815
+<!doctype html>
+<html lang="en">
+<head>
+  {% include "components/head.njk" %}
+</head>
+<body class="bg-slate-900 min-h-screen antialiased">
+<a
+  tabindex="0"
+  href="#main-content"
+  role="button"
+  class="z-20 absolute opacity-100 top-0 left-0 ml-2 mt-2 -translate-y-14 transition duration-200 ease-out focus:translate-y-0 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-slate-800 focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-violet-900 focus:ring-white z-200"
+>
+  Skip to Content
+</a>
+{% include "components/navbar.njk" %}
+<div class="transition ease-in-out" :class="$store.menu.open ? 'filter blur-sm' : ''" x-data>
+  {{ content | safe }}
+  {% include "components/footer.njk" %}
+</div>
+{% include "menu_store.njk" %}
+
+</body>
+</html>

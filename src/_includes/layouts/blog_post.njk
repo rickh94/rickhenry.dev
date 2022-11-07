@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3fa078c3594d6c07e4cf7a1a3f8936bc79201ce4f9860d1a725cc77227ada798
-size 290
+---
+layout: layouts/markdown.njk
+---
+{% import "macros/hero.njk" as hero %}
+{{ hero.hero(hero.blog_title(title, snippet), background="rose") }}
+
+
+<div class="max-w-4xl px-4 mx-auto mt-4 lg:mt-8 markdown blog-post bg-slate-600 bg-opacity-50 py-4 lg:rounded">
+  {{ content | safe }}
+</div>
+
+

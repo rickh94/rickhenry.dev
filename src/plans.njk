@@ -1,3 +1,296 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c490b5975fb092ebad829212796a2bdc84e882bf495517ef01aed280e013d7d5
-size 15188
+---
+# @formatter:off
+title: Plans
+description: Services available at Rick Henry Development
+layout: layouts/main.njk
+# @formatter:on
+---
+{% import "macros/services.njk" as services_macros %}
+{% import "macros/hero.njk" as hero_macros %}
+
+{{ hero_macros.hero(services_macros.hero_text(), background="indigo") }}
+
+
+<div x-data="{ mode: 'lts' }">
+
+
+  <h2 class="sr-only">Plans</h2>
+
+  <!-- Toggle -->
+  <div class="relative flex justify-center xs:mt-12 lg:mt-16">
+    <div class="bg-indigo-700 p-0.5 rounded-lg flex" role="tablist">
+      <button type="button"
+              @click="mode = 'lts'"
+              :class="mode === 'lts' ? 'bg-white text-indigo-700 border-indigo-700 hover:bg-indigo-50' : 'text-indigo-200 bg-transparent border border-transparent hover:bg-indigo-800'"
+              class="relative py-2 px-6 rounded-md shadow-sm text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white focus:z-10 transition ease-out duration-200"
+              role="tab"
+              aria-controls="plans-panel"
+              aria-selected="true"
+      >
+        Long Term Support
+      </button>
+      <button type="button"
+              @click="mode = 'upfront'"
+              :class="mode === 'upfront' ? 'bg-white text-indigo-700 border-indigo-700 hover:bg-indigo-50' : 'text-indigo-200 bg-transparent border border-transparent hover:bg-indigo-800'"
+              class="ml-0.5 relative py-2 px-6 rounded-md text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white focus:z-10 transition ease-out duration-200"
+              role="tab"
+              aria-controls="plans-panel"
+      >
+        Up Front
+      </button>
+    </div>
+  </div>
+{#  TODO: fix cards so that aria-labelledby makes sense. #}
+
+  <!-- Cards -->
+  <div class="relative mt-8 max-w-2xl mx-auto px-4 pb-8 sm:mt-12 sm:px-6 lg:max-w-7xl lg:px-8 lg:pb-0" role="tabpanel" id="plans-panel">
+    <!-- Decorative background -->
+    <div aria-hidden="true"
+         class="hidden absolute top-4 bottom-6 left-8 right-8 inset-0 bg-indigo-700 rounded-lg lg:block"></div>
+
+    <div class="relative space-y-6 lg:space-y-0 lg:grid lg:grid-cols-3">
+      {#      Basic Plan #}
+      <div class="bg-indigo-700 lg:bg-transparent pt-6 px-6 pb-3 rounded-lg lg:px-8 lg:pt-12">
+        <div>
+          <h3 class="text-white text-sm font-semibold uppercase tracking-wide">{{ service_tiers.basic.name }}</h3>
+          <div class="flex flex-col items-start sm:flex-row sm:items-center sm:justify-between lg:flex-col lg:items-start">
+            <div class="mt-3 flex items-center">
+              <p class="text-white text-4xl font-extrabold tracking-tight" x-show="mode === 'lts'">
+                ${{ service_tiers.basic.lts.price }}</p>
+              <p class="text-white text-4xl font-extrabold tracking-tight" x-show="mode === 'upfront'">
+                ${{ service_tiers.basic.upfront.price }}</p>
+              <div class="ml-4">
+                <p class="text-white text-sm" x-show="mode === 'lts'">USD / mo</p>
+                <p class="text-white text-sm" x-show="mode === 'upfront'">USD on delivery</p>
+              </div>
+            </div>
+            <a :href="makePlanUrl(mode, 'Basic')"
+               class="shadow bg-white text-indigo-600 hover:transform hover:-translate-y-1 normal-transition selectable mt-6 w-full inline-block py-2 px-8 border border-transparent rounded-md shadow-sm text-center text-sm font-medium sm:mt-0 sm:w-auto lg:mt-6 lg:w-full"
+            >Get Started</a>
+          </div>
+        </div>
+        <h4 class="sr-only">Features</h4>
+        <ul role="list"
+            class="border-indigo-500 divide-indigo-500 divide-opacity-75 mt-7 border-t divide-y lg:border-t-0"
+            x-show="mode === 'lts'"
+        >
+          {% for feature in service_tiers.basic.lts.features %}
+            <li class="py-3 flex items-center">
+              <!-- Heroicon name: solid/check -->
+              <svg class="text-indigo-200 w-5 h-5 flex-shrink-0"
+                   xmlns="http://www.w3.org/2000/svg"
+                   viewBox="0 0 20 20"
+                   fill="currentColor"
+                   aria-hidden="true">
+                <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+              </svg>
+              <span class="text-white ml-3 text-sm font-medium">{{ feature }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+        <ul role="list"
+            class="border-indigo-500 divide-indigo-500 divide-opacity-75 mt-7 border-t divide-y lg:border-t-0"
+            x-show="mode === 'upfront'">
+          {% for feature in service_tiers.basic.upfront.features %}
+            <li class="py-3 flex items-center" x-show="mode === 'upfront'">
+              <!-- Heroicon name: solid/check -->
+              <svg class="text-indigo-200 w-5 h-5 flex-shrink-0"
+                   xmlns="http://www.w3.org/2000/svg"
+                   viewBox="0 0 20 20"
+                   fill="currentColor"
+                   aria-hidden="true">
+                <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+              </svg>
+              <span class="text-white ml-3 text-sm font-medium">{{ feature }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+{#      Standard Plan #}
+      <div class="bg-white ring-2 ring-indigo-700 shadow-md pt-6 px-6 pb-3 rounded-lg lg:px-8 lg:pt-12">
+        <div>
+          <h3 class="text-indigo-600 text-sm font-semibold uppercase tracking-wide">{{ service_tiers.standard.name }}</h3>
+          <div class="flex flex-col items-start sm:flex-row sm:items-center sm:justify-between lg:flex-col lg:items-start">
+            <div class="mt-3 flex items-center">
+              <p class="text-indigo-600 text-4xl font-extrabold tracking-tight" x-show="mode === 'lts'">
+                ${{ service_tiers.standard.lts.price }}</p>
+              <p class="text-indigo-600 text-4xl font-extrabold tracking-tight" x-show="mode === 'upfront'">
+                ${{ service_tiers.standard.upfront.price }}</p>
+              <div class="ml-4">
+                <p class="text-gray-700 text-sm" x-show="mode === 'lts'">USD / mo</p>
+                <p class="text-gray-700 text-sm" x-show="mode === 'upfront'">USD on delivery</p>
+              </div>
+            </div>
+            <a :href="makePlanUrl(mode, 'Standard')"
+               class="bg-indigo-600 shadow text-white hover:transform hover:-translate-y-1 normal-transition selectable mt-6 w-full inline-block py-2 px-8 border border-transparent rounded-md shadow-sm text-center text-sm font-medium sm:mt-0 sm:w-auto lg:mt-6 lg:w-full"
+            >Get Started</a>
+          </div>
+        </div>
+        <h4 class="sr-only">Features</h4>
+        <ul role="list"
+            class="border-gray-200 divide-gray-200 mt-7 border-t divide-y lg:border-t-0"
+            x-show="mode === 'lts'">
+          {% for feature in service_tiers.standard.lts.features %}
+            <li class="py-3 flex items-center">
+              <!-- Heroicon name: solid/check -->
+              <svg class="text-indigo-500 w-5 h-5 flex-shrink-0"
+                   xmlns="http://www.w3.org/2000/svg"
+                   viewBox="0 0 20 20"
+                   fill="currentColor"
+                   aria-hidden="true">
+                <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-600 ml-3 text-sm font-medium">{{ feature }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+        <ul role="list"
+            class="border-gray-200 divide-gray-200 mt-7 border-t divide-y lg:border-t-0"
+            x-show="mode === 'upfront'">
+          {% for feature in service_tiers.standard.upfront.features %}
+            <li class="py-3 flex items-center">
+              <!-- Heroicon name: solid/check -->
+              <svg class="text-indigo-500 w-5 h-5 flex-shrink-0"
+                   xmlns="http://www.w3.org/2000/svg"
+                   viewBox="0 0 20 20"
+                   fill="currentColor"
+                   aria-hidden="true">
+                <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-600 ml-3 text-sm font-medium">{{ feature }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+{#      Premium plan #}
+      <div class="bg-indigo-700 lg:bg-transparent pt-6 px-6 pb-3 lg:pb-8 rounded-lg lg:px-8 lg:pt-12">
+        <div>
+          <h3 class="text-white text-sm font-semibold uppercase tracking-wide">{{ service_tiers.premium.name }}</h3>
+          <div class="flex flex-col items-start sm:flex-row sm:items-center sm:justify-between lg:flex-col lg:items-start">
+            <div class="mt-3 flex items-center">
+              <p class="text-white text-4xl font-extrabold tracking-tight" x-show="mode === 'lts'">
+                ${{ service_tiers.premium.lts.price }}</p>
+              <p class="text-white text-4xl font-extrabold tracking-tight" x-show="mode === 'upfront'">
+                ${{ service_tiers.premium.upfront.price }}</p>
+              <div class="ml-4">
+                <p class="text-white text-sm" x-show="mode === 'lts'">USD / mo</p>
+                <p class="text-white text-sm" x-show="mode === 'upfront'">USD on delivery</p>
+              </div>
+            </div>
+            <a :href="makePlanUrl(mode, 'Premium')"
+               class="shadow bg-white text-indigo-600 hover:transform hover:-translate-y-1 normal-transition selectable mt-6 w-full inline-block py-2 px-8 border border-transparent rounded-md shadow-sm text-center text-sm font-medium sm:mt-0 sm:w-auto lg:mt-6 lg:w-full"
+            >Get Started</a>
+          </div>
+        </div>
+        <h4 class="sr-only">Features</h4>
+        <ul role="list"
+            class="border-indigo-500 divide-indigo-500 divide-opacity-75 mt-7 border-t divide-y lg:border-t-0"
+            x-show="mode === 'lts'">
+          {% for feature in service_tiers.premium.lts.features %}
+            <li class="py-3 flex items-center">
+              <!-- Heroicon name: solid/check -->
+              <svg class="text-indigo-200 w-5 h-5 flex-shrink-0"
+                   xmlns="http://www.w3.org/2000/svg"
+                   viewBox="0 0 20 20"
+                   fill="currentColor"
+                   aria-hidden="true">
+                <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+              </svg>
+              <span class="text-white ml-3 text-sm font-medium">{{ feature }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+
+        <ul role="list"
+            class="border-indigo-500 divide-indigo-500 divide-opacity-75 mt-7 border-t divide-y lg:border-t-0"
+            x-show="mode === 'upfront'">
+          {% for feature in service_tiers.premium.upfront.features %}
+            <li class="py-3 flex items-center">
+              <!-- Heroicon name: solid/check -->
+              <svg class="text-indigo-200 w-5 h-5 flex-shrink-0"
+                   xmlns="http://www.w3.org/2000/svg"
+                   viewBox="0 0 20 20"
+                   fill="currentColor"
+                   aria-hidden="true">
+                <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+              </svg>
+              <span class="text-white ml-3 text-sm font-medium">{{ feature }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+<section class="mt-4 mb-2 max-w-3xl mx-auto px-4">
+  <header>
+    <h2 class="font-bold text-xl text-white">Need Something Else?</h2>
+    <p class="mt-4 text-slate-50">
+      If my offers above don't fit your needs, I'm happy to discuss lower rates for smaller projects or discounts for
+      non-profit organizations.
+    </p>
+  </header>
+</section>
+
+{# Just the wave #}
+<div class="relative h-4 xs:h-12 md:h-24 lg:h-32 -z-10 w-full">
+  <div class="absolute bottom-0">
+    {% include "waves/indigo_bottom_waves1.njk" %}
+  </div>
+</div>
+{# Customized to your needs section #}
+<section class="w-full bg-indigo-700">
+  <div class="px-4 mx-auto max-w-3xl py-2">
+    <h4 class="font-bold text-white text-3xl">Customized to your needs</h4>
+    <p class="mt-4 leading-6 text-white">The tiers above are my standard offers, but your needs might be custom! I'll
+      work with you to figure out what suits your needs best.
+    </p>
+    <p class="mt-4 leading-6 text-white"><strong class="font-bold text-xl mr-2">Long-Term Support</strong> plans start
+      with a
+      six-month term, beginning when your site goes live, billing monthly thereafter. I'll take care of hosting your
+      site and maintaining it, no hassle for you. I will also be available to make changes and updates with your needs.
+      If, for some reason, you terminate your long-term support plan, you will retain control of your domain name but
+      your site will be taken down.
+    </p>
+    <p class="mt-4 leading-6 text-white"><strong class="font-bold text-xl mr-2">Upfront</strong> plans work differently.
+      Once your
+      site is completed, I will turn over my code for you to host. Hosting and setup are not included, and future
+      changes will be billed by the size of the change or on an hourly basis.
+    </p>
+    <p class="mt-4 leading-6 text-white"><strong class="font-bold text-xl mr-2">Bug Fixes</strong> and mistakes are
+      always free. I do my best to make sure that my sites are fully-functional and correct at launch, but if I do mess
+      something up, I will do everything I can to make it right.
+    </p>
+    <p class="mt-4 leading-6 text-white">If something is beyond your current plan, you can get my work on an <strong
+        class="font-bold">hourly</strong> basis at ${{ service_tiers.hourly.rate }} per hour (billed in full hours).
+    </p>
+  </div>
+</section>
+<div class="relative h-4 xs:h-12 md:h-24 lg:h-32 -z-10 w-full">
+  <div class="absolute top-0">
+    {% include "waves/indigo_top_waves1.njk" %}
+  </div>
+</div>
+
+<script>
+  function makePlanUrl(mode, planName) {
+    const baseURL = '{{ env.url }}/get-started?plan=';
+    const planType = mode === 'upfront' ? 'Upfront' : 'LTS';
+    return `${baseURL}${planType}%20${planName}`
+  }
+</script>

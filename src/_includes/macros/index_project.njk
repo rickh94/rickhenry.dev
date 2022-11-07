@@ -1,3 +1,47 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3014bbfc3016d0fb280ccc13ddbe7cc7fe4a516615e0c919765dab0786a78b61
-size 2251
+{% import "macros/icons.njk" as icon %}
+{% macro project(name, description, img, url, snippet, row_order_class="") %}
+  {% if not row_order_class %}
+    {% set row_order_class = "sm:odd:flex-row sm:even:flex-row-reverse" %}
+  {% endif %}
+  <article class="project relative flex flex-col py-4 px-2 text-white sm:items-center max-w-6xl {{ row_order_class }}">
+    <a href="{{ url }}"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="block hover:transform hover:-translate-y-1 sm:hover:translate-y-0 sm:hover:translate-x-1 transition ease-in-out duration-200 px-4 sm:w-2/5 selectable">
+      <figure class="px-2">
+{#        <img src="{{ img }}" alt="{{ name }} screenshot" class="rounded-sm shadow">#}
+        {% image img, "rounded-sm shadow", name + " screenshot", "300w, (min-width: 640px) 600w" %}
+{#        {% image "./src/srcimg/1-purple-auth.png", "rounded-sm shadow", "Purple Auth", "(min-width: 640px) 300w, 600w" %}#}
+        <figcaption class="hover:underline text-2xl font-bold text-center text-white mt-2 sm:hidden">
+          {{ name }}
+        </figcaption>
+      </figure>
+    </a>
+    <div class="sm:w-3/5 text-white mb-2 px-2 flex flex-col gap-y-4">
+      <div class="w-full flex justify-start">
+        <h2>
+          <a href="{{ url }}"
+             class="font-bold text-2xl hidden sm:inline hover:underline selectable text-shadow-sm"
+             target="_blank"
+             rel="noopener noreferrer"
+          >{{ name }}</a>
+        </h2>
+      </div>
+      <div class="markdown font-medium">
+        {{ description | safe }}
+      </div>
+      <div class="w-full sm:w-auto justify-center flex sm:justify-start">
+        <a
+          href="{{ url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 font-bold bg-white rounded px-4 py-2 text-black hover:transform hover:-translate-y-1 sm:hover:translate-y-0 sm:hover:translate-x-1 transition ease-in-out duration-200 selectable focus:translate-x-1 focus:transform"
+        >
+          <span class="sr-only">View {{ name }} Online</span>
+          <span>View Online</span>
+          {{ icon.lookup("external_link") }}
+        </a>
+      </div>
+    </div>
+  </article>
+{% endmacro %}

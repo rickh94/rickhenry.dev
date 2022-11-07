@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d4199a98176a74b5f6d627bcde023599f782b52a32e5e08ab18196b9634a8c6f
-size 925
+{% import "macros/index_service.njk" as index_service %}
+{% import "macros/icons.njk" as icon %}
+<div class="relative pb-10 xs:pb-20 xl:pb-32">
+  <div class="absolute -z-10 w-full bottom-0" aria-hidden="true">
+    {% include "waves/blue_bottom_waves1.njk" %}
+  </div>
+  <main class="w-full px-4 py-4 sm:py-8">
+    <header class="flex w-full justify-center mb-4 md:mb-10">
+      <h1 class="font-bold text-white pb-2 md:pb-4 px-4 border-b-2 border-white text-2xl sm:text-4xl">
+        How I Can Help you
+      </h1>
+    </header>
+    <ul class="grid gap-2 max-w-6xl mx-auto my-2 grid-cols-1 md:grid-cols-2 text-white px-2 sm:px-10 list-none">
+      {% for service in collections.service %}
+        {{ index_service.service(service.data.title, icon.lookup(service.data.icon, "h-10 w-10"), service.data.icon_color_class, service.templateContent, "/services#" + service.data.slug) }}
+      {% endfor %}
+    </ul>
+  </main>
+</div>

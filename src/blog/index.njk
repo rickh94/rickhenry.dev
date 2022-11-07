@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e7b717f748e5141a64ff997c26d3ed9190053ccdf2512bc91bc51c0568315b89
-size 569
+---
+title: Blog | Rick Henry Development
+description: My Blog
+layout: layouts/main
+eleventyNavigation:
+  key: Blog
+  order: 4
+---
+
+{% import "macros/hero.njk" as hero %}
+{% import "macros/post_card.njk" as post_card %}
+{{ hero.hero(hero.hero_title("Welcome to my blog", "I write about what I'm working on"), background="rose") }}
+
+<div class="px-2 md:px-8 mt-2 sm:mt-10 lg:mt-20 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-md md:max-w-5xl mx-auto">
+  {% for post in collections.blog_post | reverse %}
+    {{ post_card.card(post) }}
+  {% endfor %}
+</div>

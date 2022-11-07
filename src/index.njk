@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0aed65d2b8f342a81ed2659e55317f336a3ec811b0566756f8b27a8108bd6be8
-size 622
+---
+title: Rick Henry Development
+description: Rick Henry Development builds optimized websites for people and business who want to improve their online presence.
+layout: layouts/main
+eleventyNavigation:
+  key: Home
+  order: 0
+  hideOnDesktop: true
+---
+
+{% import "macros/hero.njk" as hero %}
+{{ hero.hero(hero.hero_title("I Build Fast Websites", "so you get noticed online") + hero.cta("Get Started", "/get-started"), background="blue") }}
+{% include "page_components/index/services_section.njk" %}
+{% include "page_components/index/projects_section.njk" %}
+{% include "page_components/index/contact_form_section.njk" %}

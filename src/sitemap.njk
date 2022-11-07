@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e20b32fb682a8acc07ce1a144d7195a837901af76720e29423f43fc04a832c26
-size 515
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for page in collections.all %}
+    {% if not page.data.draft %}
+      <url>
+        <loc>{{ site.url }}{{ page.url | url }}</loc>
+        <lastmod>{{ page.date.toISOString() }}</lastmod>
+        <changefreq>{{ page.data.changeFreq if page.data.changeFreq else "monthly" }}</changefreq>
+      </url>
+    {% endif %}
+  {% endfor %}
+</urlset>

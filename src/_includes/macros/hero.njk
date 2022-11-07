@@ -1,3 +1,48 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0136931d8466a0ac83bd4e82b77006da58faa2ed7236b93544772e82a84244ee
-size 1894
+{% macro hero(content, background=undefined) %}
+  <main class="flex relative" id="main-content">
+    <div aria-hidden="true" class="absolute -z-10 justify-center w-full mt-10 md:mt-0 xl:-mt-10">
+      {% if background %}
+        {% include "waves/bg_wave_" + background + ".njk" %}
+      {% endif %}
+    </div>
+    <div class="flex items-center my-14 sm:my-24 w-full">
+      <div class="flex-col w-full justify-center items-center relative">
+        <div class="flex-col flex justify-center items-center">
+          {{ content | safe }}
+        </div>
+      </div>
+    </div>
+  </main>
+{% endmacro %}
+
+{% macro hero_title(title, subtitle, alignment_class='text-center') %}
+  <div class="max-w-4xl">
+    <div class="text-4xl sm:text-6xl font-bold text-slate-50 leading-tight {{ alignment_class }} text-shadow px-2">
+      {{ title }}
+    </div>
+    <div class="mt-2 text-xl sm:text-2xl font-bold text-slate-200 leading-tight {{ alignment_class }} text-shadow px-2">
+      {{ subtitle }}
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro blog_title(title, subtitle) %}
+  <div class="max-w-4xl">
+    <div class="text-3xl sm:text-5xl font-bold text-slate-50 leading-tight {{ alignment_class }} text-shadow px-2">
+      {{ title }}
+    </div>
+    <div class="mt-2 text-xl sm:text-2xl font-bold text-slate-200 leading-tight {{ alignment_class }} text-shadow px-2">
+      {{ subtitle }}
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro cta(text, to) %}
+  <div class="flex justify-center">
+    <a href="{{ to }}"
+       class="mt-4 sm:mt-12 py-2 sm:py-4 px-12 rounded-sm text-slate-900 bg-white text-center font-bold shadow text-2xl sm:text-4xl hover:transform hover:-translate-y-1 hover:shadow-lg transition ease-in-out duration-300 focus:ring-2 focus:ring-offset-2 focus:ring-white focus:outline-none focus:ring-offset-transparent focus:-translate-y-1"
+    >
+      {{ text }}
+    </a>
+  </div>
+{% endmacro %}

@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:224d83d36fcb51d09094420fecb69faaa76b842dc0698ff4a2c7bf264677a2cb
-size 514
+<script>
+  document.addEventListener('alpine:init', () => {
+    Alpine.store('menu', {
+      open: false,
+      toggle() {
+        this.open = !this.open;
+      },
+
+      openMenu() {
+        this.open = true;
+      },
+
+      closeMenu() {
+        this.open = false;
+      }
+
+    })
+  })
+
+  // TODO: maybe, maybe, add logic to check the size and only close menu if we go
+  // above the breakpoint where it disappears.
+  window.addEventListener('resize', () => {
+    Alpine.store('menu').closeMenu()
+  })
+</script>

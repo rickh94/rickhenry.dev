@@ -1,3 +1,54 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6d1290c6e35742cf633c85f47ca7771593535f81322502b03ae6d769d6bf9d35
-size 2165
+---
+# @formatter:off
+title: Projects
+description: Past projects I've done
+layout: layouts/main.njk
+eleventyNavigation:
+  key: Projects
+  order: 2
+# @formatter:on
+---
+
+{% import "macros/hero.njk" as hero_macros %}
+{% import "macros/index_project.njk" as index_project %}
+{{ hero_macros.hero(hero_macros.hero_title("Past Projects", "Here are some more things I've built"), background="emerald") }}
+
+{# I have to admit that there's a bit of spaghetti to make all the waves work correctly. But it is putting them in the correct
+places and is adaptable to any number of projects (hopefully). #}
+<main class="flex flex-col w-full xs:mt-10 space-y-0">
+  {% for project in collections.project |sortByIndex %}
+    <div class="relative">
+      <div class="{% if loop.index % 2 === 0 %}bg-emerald-500 sm:-my-10{% else %}py-10 sm:py-20 md:py-44{% endif %}">
+        <div class="max-w-5xl mx-auto">
+          {% if loop.index % 2 == 0 %}
+            {% set row_order_class = "sm:flex-row-reverse" %}
+            {% else %}
+            {% set row_order_class = "sm:flex-row" %}
+          {% endif %}
+          {{ index_project.project(project.data.title, project.templateContent, project.data.img, project.data.url, project.data.snippet, row_order_class) }}
+        </div>
+      </div>
+      {% if loop.index % 2 === 1 %}
+        {% if loop.index !== 1 %}
+{#          can see these #}
+          <div class="absolute w-full top-0 -z-20 overflow-hidden" id="{{ loop.index }}-bottom-waves" aria-hidden="true">
+            {% include "waves/emerald_bottom_waves1.njk" %}
+          </div>
+        {% endif %}
+        {% if not loop.last %}
+{#          can't see these #}
+          <div class="absolute -z-10 w-full bottom-0" id="{{ loop.index }}-top-waves" aria-hidden="true">
+            {% include "waves/emerald_top_waves1.njk" %}
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+    {% if loop.last and loop.index % 2 === 0 %}
+      <div class="relative w-full pb-16" aria-hidden="true">
+        <div class="absolute w-full top-0 -z-10">
+          {% include "waves/emerald_bottom_waves1.njk" %}
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</main>

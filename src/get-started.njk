@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6318e1d27eab6d928c0cf870b17e18d3439dd466ff48a57ab79abe38c904380a
-size 444
+---
+title: Get Started
+description: Contact form for Rick Henry Development
+layout: layouts/main.njk
+eleventyNavigation:
+  key: Get Started
+  order: 5
+  cta: true
+---
+
+{% import "macros/hero.njk" as hero_macros %}
+{{ hero_macros.hero(hero_macros.hero_title("Get Started", "Send me a message below so we can get to work"), background="blue") }}
+
+<div class="max-w-4xl px-4 mx-auto xs:mt-16">
+  {% include "components/contact_form.njk" %}
+</div>

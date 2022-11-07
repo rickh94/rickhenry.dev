@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e9bedcc0d70a71c41eeb7487de73c9781eb3ead129705e6d48142a630d98be89
-size 579
+{% macro card(post) %}
+  <a class="block shadow bg-slate-100 text-black rounded p-4 selectable hover:transform hover:-translate-y-1 hover:shadow-lg hover:bg-slate-300 focus:transform focus:-translate-y-1 focus:bg-slate-300 normal-transition {% if pinned %}pinned{% endif %}"
+     href="{{ post.url }}"
+  >
+    <article>
+      <h2 class="text-xl font-bold">{{ post.data.title }}</h2>
+      <p class="text-slate-800 italic">{{ post.data.date | niceDate }}</p>
+      <p class="text-lg mb-1">{{ post.data.snippet }}</p>
+      <p>Read more...</p>
+    </article>
+  </a>
+{% endmacro %}

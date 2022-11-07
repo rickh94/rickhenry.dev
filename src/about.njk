@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3e25511c8270e3e872d8af5f2c6a3971d00550fa9ca99a444a31b888826eaf9a
-size 484
+---
+title: About
+description: A little about myself
+layout: layouts/markdown.njk
+templateEngineOverride: njk
+eleventyNavigation:
+  key: About
+  order: 3
+---
+
+{% import "macros/hero.njk" as hero_macros %}
+
+{{ hero_macros.hero(hero_macros.hero_title("Hi, I'm Rick", "Thanks for visiting my site"), background="violet") }}
+
+<div class="max-w-3xl mx-auto py-4 px-4 mt-20 md:mt-10 text-white bg-slate-900 bg-opacity-80 lg:rounded" id="main-content">
+  {% include "about/bio.njk" %}
+</div>

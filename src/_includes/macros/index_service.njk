@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7a8cdf246da5be1255f9deaa8c7b8c9649a6667dd3089acb46adcd93b22823c2
-size 538
+{% macro service(title, icon, icon_color_class, description, link) %}
+  <li class="flex gap-2 px-2 py-3">
+    <div aria-hidden="true" class="{{ icon_color_class }} z-20" id="icon-wrapper-{{ title | slugify }}">
+      {{ icon | safe }}
+    </div>
+    <div class="z-20">
+      <h2 class="font-bold text-lg block z-20 mb-0" id="service-title-{{ title | slugify }}">{{ title }}</h2>
+      <p class="text-slate-100 z-20" id="content-section-{{ title | slugify }}">
+        {{ description | safe }}
+      </p>
+    </div>
+  </li>
+{% endmacro %}

@@ -1,3 +1,74 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bc64bc0b1040ccc464c1a23ea8e8c10bd7ce47d5d6a8c86a5bb31476c23ebcb9
-size 1889
+{
+  "basic": {
+    "name": "Basic",
+    "lts": {
+      "price": 150,
+      "features": [
+        "Fast, Static Website",
+        "Mobile-first Design",
+        "Contact Form",
+        "Up to three changes per month",
+        "Basic social media and advertising assistance"
+      ]
+    },
+    "upfront": {
+      "price": 1000,
+      "features": [
+        "Fast, Static Website",
+        "Mobile-first Design",
+        "Basic social media and advertising setup"
+      ]
+    }
+  },
+  "standard": {
+    "name": "Standard",
+    "lts": {
+      "price": 250,
+      "features": [
+        "Fast, Static Website",
+        "Mobile-first Design",
+        "Up to five changes per month",
+        "Additional features (blog/more forms)",
+        "One blog/article written per month",
+        "Social Media and advertising management",
+        "Site Hosting and Analytics Included"
+      ]
+    },
+    "upfront": {
+      "price": 1650,
+      "features": [
+        "Fast, Static Website",
+        "Mobile-first Design",
+        "Additional features (blog/more forms)",
+        "Comprehensive Social Media and advertising setup"
+      ]
+    }
+  },
+  "premium": {
+    "name": "Premium",
+    "lts": {
+      "price": "300+",
+      "features": [
+        "Fast Static or Dynamic Website",
+        "Mobile-first Design",
+        "Premium features (blog, eCommerce, custom dashboard, authentication)",
+        "Social Media and advertising management",
+        "Multiple blogs/articles per month",
+        "More than five changes per month",
+        "Site Hosting and Analytics included"
+      ]
+    },
+    "upfront": {
+      "price": "2000+",
+      "features": [
+        "Fast Static or Dynamic Website",
+        "Mobile-first Design",
+        "Premium features (blog, eCommerce, custom dashboard)",
+        "Comprehensive Social Media and advertising setup"
+      ]
+    }
+  },
+  "hourly": {
+    "rate": 50
+  }
+}

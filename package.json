@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:18f0fb90566cd7f0d2e47796bdc9594f0ad020d5dc6f3e8723ec216de9745cce
-size 1036
+{
+  "name": "rickhenry.dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "eleventy --serve & postcss styles/tailwind.pcss -o _tmp/style.css --watch",
+    "build": "ELEVENTY_PRODUCTION=true eleventy & NODE_ENV=production postcss styles/tailwind.pcss -o _site/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-navigation": "^0.3.3",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
+    "alpinejs": "^3.10.2",
+    "autoprefixer": "^10.4.7",
+    "clean-css-cli": "^5.6.0",
+    "dotenv": "^16.0.1",
+    "html-minifier": "^4.0.0",
+    "markdown-it": "^13.0.1",
+    "markdown-it-image-figures": "^2.1.0",
+    "tailwindcss": "^3.0.24"
+  },
+  "dependencies": {
+    "@11ty/eleventy-img": "^2.0.1",
+    "@tailwindcss/forms": "^0.5.2",
+    "cssnano": "^5.1.14",
+    "eleventy-plugin-compress": "^1.0.4",
+    "postcss-cli": "^10.0.0"
+  }
+}

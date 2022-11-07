@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d721880bbfea0871f813209524e8e08aae4f2af15a19c132bb7639b12a6e6c82
-size 1140
+---
+title: Message Failed
+description: Message failed to send
+layout: layouts/main.njk
+---
+
+{% import "macros/hero.njk" as hero_macros %}
+{{ hero_macros.hero(hero_macros.hero_title("Unknown Error", "Your message was could not be sent"), background="red") }}
+<div class="max-w-2xl text-white mt-12 mx-auto px-4 mb-20">
+  <p class="mb-8 text-center text-lg">Please try again later or email me directly at rickhenry&#64;rickhenry.dev</p>
+  <div class="flex justify-center">
+    <a
+      href="/"
+      title="Go Home"
+      class="inline-flex items-center justify-center gap-2 font-bold bg-white rounded px-4 py-2 text-black hover:transform hover:translate-x-1 transition ease-in-out duration-200 selectable focus:translate-x-1 focus:transform"
+    >
+      {#      Arrow left icon #}
+      <svg xmlns="http://www.w3.org/2000/svg"
+           class="h-6 w-6"
+           fill="none"
+           viewBox="0 0 24 24"
+           stroke="currentColor"
+           stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+      </svg>
+      <span>Back to Homepage</span>
+    </a>
+  </div>
+</div>

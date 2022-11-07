@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f7a2ce2d229d6101b70a9d14d5975febab42e4dcc966f2003ed424052c9fb700
-size 65
+{
+  "tags": ["blog_post"],
+  "layout": "layouts/blog_post.njk"
+}
