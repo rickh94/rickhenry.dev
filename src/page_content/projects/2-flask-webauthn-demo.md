@@ -5,7 +5,7 @@ title: Flask WebAuthn Demo
 tags: project
 hidden: false
 featured: true
-img: https://f000.backblazeb2.com/file/rickhenrydev-files/img/projects/2-flask-webauthn-demo.png
+img: ./src/page_content/projects/2-flask-webauthn.png
 url: https://flask-webauthn.rickhenry.dev
 snippet: A demonstration of device-based passwordless authentication using python.
 index: 2
@@ -24,3 +24,5 @@ framework and a few of my other favorite technologies. I wrote
 a [series of blog posts](/blog/posts/2022-06-19-flask-webauthn-demo-1) about building it. They're fairly
 technical and really only useful if you're already well-versed in Python and Flask and some Javascript. And if you're
 *really* a nerd like me, you can [check out the source code](https://github.com/rickh94/flask-webauthn-demo).
+
+[//]: # (img: https://f000.backblazeb2.com/file/rickhenrydev-files/img/projects/2-flask-webauthn-demo.png)

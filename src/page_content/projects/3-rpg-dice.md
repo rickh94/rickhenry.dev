@@ -3,7 +3,7 @@ title: Dice Probability Calculator
 tags: project
 hidden: false
 featured: false
-img: https://f000.backblazeb2.com/file/rickhenrydev-files/img/projects/3-rpg-dice.png
+img: ./src/page_content/projects/3-rpg-dice.png
 url: https://rollprobability.com
 snippet: A simple site for calculating the probabilities associated with rolling multiple dice
 index: 3
@@ -15,3 +15,5 @@ bare bones but easy to understand and use.
 
 I walk through collecting all the data needed with nice big buttons on the form, then run the calculation and generate a
 graph of all the possibilities. You can even print out the graph, and it looks nice, not like a printed website!
+
+[//]: # (img: https://f000.backblazeb2.com/file/rickhenrydev-files/img/projects/3-rpg-dice.png)

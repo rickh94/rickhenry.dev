@@ -5,7 +5,7 @@ title: Table Tennis Scoreboard
 tags: project
 hidden: false
 featured: false
-img: https://f000.backblazeb2.com/file/rickhenrydev-files/img/projects/5-table-tennis-scoreboard.png
+img: ./src/page_content/projects/5-table-tennis-scoreboard.png
 url: https://tabletennisscoreboard.com
 snippet: A single page app for keeping score in a game of table tennis. Built with Eleventy.
 index: 5
@@ -21,4 +21,6 @@ It's a single page app that keeps score, tracks games and matches. It allows you
 you can use a presentation clicker to keep score from far away from your device. There's no server, so it can't keep
 track of lifetime games or matches, but it does save all configurations to the browser so that you can just pick up with
 the same player names and keybindings. I also ended up building a correction mode for when I inevitably click the wrong
-button after a point. 
+button after a point.
+
+[//]: # (img: https://f000.backblazeb2.com/file/rickhenrydev-files/img/projects/5-table-tennis-scoreboard.png)
