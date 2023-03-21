@@ -17,10 +17,10 @@
 
 {% macro hero_title(title, subtitle, alignment_class='text-center') %}
   <div class="max-w-4xl">
-    <div class="text-4xl sm:text-6xl font-bold text-slate-50 leading-tight {{ alignment_class }} text-shadow px-2">
+    <div data-test="hero-title" class="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-bold text-slate-50 leading-tight {{ alignment_class }} text-shadow px-2">
       {{ title }}
     </div>
-    <div class="mt-2 text-xl sm:text-2xl font-bold text-slate-200 leading-tight {{ alignment_class }} text-shadow px-2">
+    <div data-test="hero-subtitle" class="mt-2 text-xl sm:text-2xl font-bold text-slate-200 leading-tight {{ alignment_class }} text-shadow px-2">
       {{ subtitle }}
     </div>
   </div>
@@ -38,8 +38,8 @@
 {% endmacro %}
 
 {% macro cta(text, to) %}
-  <div class="flex justify-center">
-    <a href="{{ to }}"
+  <div data-test="cta" class="flex justify-center">
+    <a data-test="cta-link" href="{{ to }}"
        class="mt-4 sm:mt-12 py-2 sm:py-4 px-12 rounded-sm text-slate-900 bg-white text-center font-bold shadow text-2xl sm:text-4xl hover:transform hover:-translate-y-1 hover:shadow-lg transition ease-in-out duration-300 focus:ring-2 focus:ring-offset-2 focus:ring-white focus:outline-none focus:ring-offset-transparent focus:-translate-y-1"
     >
       {{ text }}

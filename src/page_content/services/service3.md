@@ -1,10 +1,10 @@
 ---
-title: Online Presence
-icon: globe
+title: Low Maintenance
+icon: wrench_screwdriver
 tags: service
 icon_color_class: text-indigo-500
-slug: automate-repetitive-tasks
+slug: low-maintenance
 ---
 
-Your presence online is more than your website. We can work together to make sure that your 
-advertising and social media are up-to-date and useful.
+My sites require very little ongoing maintenance so that they stay will stay
+beautiful and functional for as long as possible.

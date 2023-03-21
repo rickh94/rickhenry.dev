@@ -3,6 +3,7 @@
   action="{{ env.formsparkURL }}"
   class="flex-col w-full text-white" id="contact-form"
   data-botpoison-public-key="{{ env.botpoisonPublicKey }}"
+  data-test="contact-form"
 >
   {#      honeypot and formspark configuration #}
   <input type="hidden" name="_important" id="_important">
@@ -18,15 +19,15 @@
     <fieldset class="w-full gap-3 md:w-1/3 flex flex-col">
       <div class="form-control">
         <label for="name" class="font-bold md:text-lg mb-1 block">Name</label>
-        <input type="text" name="name" id="name" required placeholder="Your Name">
+        <input type="text" name="name" id="name" required placeholder="Your Name" data-test="contact-name">
       </div>
       <div class="form-control">
         <label for="email" class="font-bold md:text-lg mb-1 block">Email</label>
-        <input type="email" name="email" id="email" required placeholder="you@yourwebsite.com">
+        <input type="email" name="email" id="email" required placeholder="you@yourwebsite.com" data-test="contact-email">
       </div>
       <div class="form-control">
         <label for="website" class="font-bold md:text-lg mb-1 block">Current Website (optional)</label>
-        <input type="url" name="website" id="website" placeholder="https://yourcurrentwebsite.com" >
+        <input type="url" name="website" id="website" placeholder="https://yourcurrentwebsite.com" data-test="contact-website">
       </div>
     </fieldset>
     <fieldset class="form-control md:w-2/3">
@@ -37,22 +38,12 @@
                 placeholder="Tell me about yourself and your website."
                 class="h-[11.75rem] w-full text-gray-500 bg-white rounded-sm py-1 px-2 sm:flex-grow shadow focus:shadow-lg focus:text-black transition ease-out duration-200 focus:outline-none"
                 spellcheck
+                data-test="contact-message"
       ></textarea>
     </fieldset>
   </section>
   <div class="mt-3 sm:mt-2 flex flex-col sm:flex-row gap-2 justify-end">
-    <button type="submit" class="submit-button selectable" id="submit-button">Send</button>
+    <button type="submit" class="submit-button selectable" id="submit-button" data-test="contact-submit">Send</button>
   </div>
 
 </form>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const params = new URLSearchParams(window.location.search);
-    const plan = params.get('plan')
-    if (plan) {
-      document.getElementById('plan').value = plan;
-      document.getElementById('form-subtitle').innerText = `Send me a message so we can get to work on your ${plan.split(' ')[1]} website.`;
-    }
-  })
-</script>

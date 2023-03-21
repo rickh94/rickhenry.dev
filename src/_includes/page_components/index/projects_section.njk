@@ -1,16 +1,16 @@
 {% import "macros/index_project.njk" as index_project %}
-<main class="w-full bg-blue-700">
-  <header class="flex w-full justify-center sm:justify-start text-white mb-2 max-w-4xl mx-auto px-4 sm:px-10">
-    <h1 class="text-center sm:text-left font-bold text-white text-2xl sm:text-4xl text-shadow">
+<main class="w-full bg-blue-700" data-test="projects-section">
+  <header class="flex w-full justify-center md:justify-start text-white mb-2 max-w-4xl mx-auto px-4 md:px-10">
+    <h1 class="text-center md:text-left font-bold text-white text-2xl sm:text-4xl text-shadow">
       Things I've Made
     </h1>
   </header>
-  <section class="flex w-full justify-center sm:justify-start mb-4 sm:mb-6 max-w-4xl mx-auto px-4 sm:px-10">
-    <p class="text-center sm:text-left font-bold text-white text-base sm:text-lg text-shadow-sm">
+  <section class="flex w-full justify-center md:justify-start mb-4 md:mb-6 max-w-4xl mx-auto px-4 md:px-10">
+    <p class="text-center md:text-left font-bold text-white text-base md:text-lg text-shadow-sm">
       Here are some of my favorite projects
     </p>
   </section>
-  <ul class="flex flex-col items-center list-none">
+  <ul class="flex flex-col items-center list-none max-w-2xl mx-auto md:max-w-none md:mx-0">
     {% for project in collections.project |sortByIndex %}
       {% if project.data.featured %}
         {{ index_project.project(project.data.title, project.templateContent, project.data.img, project.data.url, project.data.snippet) }}

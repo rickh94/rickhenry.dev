@@ -8,22 +8,26 @@
 
 <div x-cloak x-data class="z-20">
 {#  TODO: Double check vertical padding classes #}
-  <header class="flex justify-between items-center px-4 lg:px-8 lg:pt-4 pt-2 h-16 transition ease-in-out duration-200" :class="$store.menu.open ? 'xs:filter xs:blur-sm' : ''" x-cloak x-data>
+  <header data-test="topbar" class="flex justify-between items-center px-4 lg:px-8 lg:pt-4 pt-2 h-16 transition ease-in-out duration-200" :class="$store.menu.open ? 'xs:filter xs:blur-sm' : ''" x-cloak x-data>
     {% include "components/sitetitle.njk" %}
     {#  Desktop nav menu #}
-    <nav class="hidden lg:flex space-x-1 lg:space-x-2 items-center" aria-label="primary">
+    <nav class="hidden lg:flex space-x-1 lg:space-x-2 items-center" aria-label="primary" data-test="desktop-nav">
       {%- for entry in navPages %}
         {% if not entry.hideOnDesktop %}
           {% if entry.cta %}
             <a href="{{ entry.url | url }}"
-               class="inline lg:block px-2 py-1 text-center bg-white text-lg font-bold rounded text-black transition ease-in-out duration-300 hover:transform hover:-translate-y-1 focus:transform focus:-translate-y-1 selectable">{{ entry.title }}</a>
+               class="inline lg:block px-2 py-1 text-center bg-white text-lg font-bold rounded text-black transition ease-in-out duration-300 hover:transform hover:-translate-y-1 focus:transform focus:-translate-y-1 selectable"
+               data-test="nav-cta-{{ loop.index }}"
+            >{{ entry.title }}</a>
           {% else %}
-            <a href="{{ entry.url | url }}" class="nav-link">{{ entry.title }}</a>
+            <a href="{{ entry.url | url }}" class="nav-link"
+               data-test="nav-link-{{ loop.index }}"
+            >{{ entry.title }}</a>
           {% endif %}
         {% endif %}
       {%- endfor %}
     </nav>
-    <div class="items-center lg:hidden">
+    <div class="items-center lg:hidden" data-test="mobile-nav-button">
       <button class="flex gap-1 items-center font-bold text-xl text-white outline-none ease-in-out duration-300  focus:ring-2 focus:ring-white focus:ring-offset-slate-900 focus:outline-none focus:ring-offset-2 rounded"
               @click="$store.menu.openMenu()"
               x-data
@@ -47,6 +51,7 @@
        x-transition:leave="transition ease-in duration-100"
        x-transition:leave-start="opacity-100"
        x-transition:leave-end="opacity-0"
+       data-test="medium-nav-menu"
 
   >
     <div class="bg-slate-900 rounded p-8 w-72 shadow-lg text-white relative"
@@ -64,7 +69,7 @@
       </div>
       <div class="flex justify-between items-center z-50 relative">
         <div class="text-2xl font-bold">Menu</div>
-        <button class="border-2 border-white rounded" @click="$store.menu.closeMenu()" x-data>
+        <button class="border-2 border-white rounded" @click="$store.menu.closeMenu()" x-data data-test="close-medium-nav-button">
           <span class="sr-only">Close Navigation</span>
           {#        framed x button #}
           <svg xmlns="http://www.w3.org/2000/svg"
@@ -84,9 +89,11 @@
           {% if not entry.hideOnMobile %}
             {% if entry.cta %}
               <a href="{{ entry.url | url }}"
-                 class="inline lg:block px-2 py-1 text-center bg-white text-lg font-bold rounded text-black transition ease-in-out duration-300 hover:transform hover:-translate-y-1 focus:transform focus:-translate-y-1 selectable">{{ entry.title }}</a>
+                 class="inline lg:block px-2 py-1 text-center bg-white text-lg font-bold rounded text-black transition ease-in-out duration-300 hover:transform hover:-translate-y-1 focus:transform focus:-translate-y-1 selectable"
+                 data-test="medium-cta-{{ loop.index }}"
+              >{{ entry.title }}</a>
             {% else %}
-              <a href="{{ entry.url | url }}" class="nav-link">{{ entry.title }}</a>
+              <a href="{{ entry.url | url }}" class="nav-link" data-test="medium-nav-{{ loop.index }}">{{ entry.title }}</a>
             {% endif %}
           {% endif %}
         {%- endfor %}
@@ -103,13 +110,14 @@
        x-transition:leave="transition ease-in duration-300 transform"
        x-transition:leave-start="translate-x-0"
        x-transition:leave-end="translate-x-full"
+       data-test="mobile-nav-menu"
   >
     <div class="fixed bottom-0 w-full -z-10" aria-hidden="true">
       {% include "waves/blue_bottom_waves_vertical1.njk" %}
     </div>
     <div class="flex justify-between items-center px-4 pt-1">
       {% include "components/sitetitle.njk" %}
-      <button class="text-white border-2 rounded border-white" @click="$store.menu.closeMenu()" x-data>
+      <button class="text-white border-2 rounded border-white" @click="$store.menu.closeMenu()" x-data data-test="close-mobile-nav-button">
         <span class="sr-only">Close Navigation</span>
         <svg xmlns="http://www.w3.org/2000/svg"
              aria-hidden="true"
@@ -128,9 +136,13 @@
         {% if not entry.hideOnMobile %}
           {% if entry.cta %}
             <a href="{{ entry.url | url }}"
-               class="inline lg:block px-2 py-1 text-center bg-white text-lg font-bold rounded text-black transition ease-in-out duration-300 hover:transform hover:-translate-y-1 focus:transform focus:-translate-y-1 selectable">{{ entry.title }}</a>
+               class="inline lg:block px-2 py-1 text-center bg-white text-lg font-bold rounded text-black transition ease-in-out duration-300 hover:transform hover:-translate-y-1 focus:transform focus:-translate-y-1 selectable"
+               data-test="mobile-cta-{{ loop.index }}"
+            >{{ entry.title }}</a>
           {% else %}
-            <a href="{{ entry.url | url }}" class="nav-link">{{ entry.title }}</a>
+            <a href="{{ entry.url | url }}" class="nav-link"
+               data-test="mobile-nav-{{ loop.index }}"
+            >{{ entry.title }}</a>
           {% endif %}
         {% endif %}
       {%- endfor %}

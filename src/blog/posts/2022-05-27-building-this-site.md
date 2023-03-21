@@ -1,5 +1,5 @@
 ---
-title: Building my website 
+title: Building my website
 snippet: The more I worked on this site, the simpler and simpler it became, and it worked out great!
 pinned: true
 date: 2022-05-27 20:23:23Z
@@ -29,7 +29,7 @@ third-party services that I was using slightly out of spec.
 
 {% mdimage "https://user-images.githubusercontent.com/353959/66987533-40eae100-f0c1-11e9-822e-cbaf38fb8e3f.png", "Ghost CMS Homepage", "300w, (max-width: 640px) 600w", "Ghost is a great Content Management System, just not right for my needs" %}
 
-[//]: # (![Ghost CMS]&#40;https://user-images.githubusercontent.com/353959/66987533-40eae100-f0c1-11e9-822e-cbaf38fb8e3f.png &#41;)
+[//]: # "![Ghost CMS](https://user-images.githubusercontent.com/353959/66987533-40eae100-f0c1-11e9-822e-cbaf38fb8e3f.png )"
 
 ## Removing Ghost
 
@@ -87,7 +87,7 @@ Needless to say, I had it up-and-running in no time and loved it.
 So I had a static site generator that I loved, but I also didn't want to write a bunch of boilerplate css and
 javascript, so including Alpine and Tailwind was a no-brainer. I found tutorials for how to integrate them with
 Eleventy and had everything I needed. Tailwind's utility classes are a huge time save when building fast. I could
-certainly build everything on this site directly in CSS, but it would take _much_ longer for no benefit. Tailwind
+certainly build everything on this site directly in CSS, but it would take *much* longer for no benefit. Tailwind
 only exports the CSS you actually use, so it doesn't really bloat (it's currently 44KB). Alpine is similar in that
 I could build all the functionality in Vanilla JavaScript, but it would take much longer, and Alpine is so small that
 it's not really noticeable in load times.
@@ -95,5 +95,3 @@ it's not really noticeable in load times.
 I finally have balance: minimal complexity without repetition, content and templates are separate, and very little
 boilerplate code to repeat. In the end, I have a static site of HTML, CSS, and JavaScript that's easy to host, easy
 to build, and will load extremely fast.
-
-

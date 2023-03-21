@@ -1,5 +1,5 @@
 {% macro service(title, icon, icon_color_class, description, link) %}
-  <li class="flex gap-2 px-2 py-3">
+  <li class="flex gap-2 px-2 py-3" data-test="service-display">
     <div aria-hidden="true" class="{{ icon_color_class }} z-20" id="icon-wrapper-{{ title | slugify }}">
       {{ icon | safe }}
     </div>

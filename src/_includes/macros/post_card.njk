@@ -1,6 +1,7 @@
 {% macro card(post) %}
   <a class="block shadow bg-slate-100 text-black rounded p-4 selectable hover:transform hover:-translate-y-1 hover:shadow-lg hover:bg-slate-300 focus:transform focus:-translate-y-1 focus:bg-slate-300 normal-transition {% if pinned %}pinned{% endif %}"
      href="{{ post.url }}"
+     data-test="blog-post-card"
   >
     <article>
       <h2 class="text-xl font-bold">{{ post.data.title }}</h2>

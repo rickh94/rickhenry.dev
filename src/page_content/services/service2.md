@@ -1,9 +1,9 @@
 ---
-title: Search Engine Optimization
-icon: search
+title: Automation
+icon: code-bracket
 tags: service
 icon_color_class: text-violet-500
-slug: seo
+slug: automation
 ---
 
-Most of what you hear about SEO isn't true. I'll help you find what **really** matters to get your site to the top.
+I can help automate existing workflows as well as build custom software to make repetitive tasks easier and faster.
