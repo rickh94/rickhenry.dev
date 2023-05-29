@@ -4,7 +4,7 @@ tags: project
 hidden: false
 featured: true
 img: ./src/page_content/projects/0-instrument-inventory.png
-url: https://instruments-demo.rickhenry.dev/?username=instrument.admin@rickhenry.dev\&password=InstrumentDemo12!
+url: https://instruments-demo.rickhenry.dev/?username=instrument.admin@rickhenry.dev&password=InstrumentDemo12!
 snippet: App for managing inventory of musical instruments
 index: 0
 ---
