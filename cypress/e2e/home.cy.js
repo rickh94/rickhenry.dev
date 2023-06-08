@@ -5,7 +5,7 @@ describe('Homepage', () => {
     context("Hero", () => {
         it("has correct title and subtitle", () => {
             cy.get("[data-test='hero-title']").contains("Simple – Fast – Beautiful")
-            cy.get("[data-test='hero-subtitle']").contains("The website you need with no nonsense")
+            cy.get("[data-test='hero-subtitle']").contains("Great websites for busy people")
         })
 
         it('has correct call to action', () => {

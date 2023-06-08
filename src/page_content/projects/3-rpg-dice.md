@@ -6,7 +6,7 @@ featured: false
 img: ./src/page_content/projects/3-rpg-dice.png
 url: https://rollprobability.com
 snippet: A simple site for calculating the probabilities associated with rolling multiple dice
-index: 3
+index: 4
 ---
 
 I couldn't find an easy-to-use or attractive website for calculating the probabilities of the rolls of multiple dice in

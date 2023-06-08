@@ -6,7 +6,7 @@ featured: false
 img: ./src/page_content/projects/4-bosnia-ist.png
 url: https://bosniaist.netlify.app
 snippet: Static Website for a Charity Outreach Trip
-index: 4
+index: 5
 ---
 
 The Bosnia IST was in need of a more modern website. I created an updated site that is extremely fast and easy to update

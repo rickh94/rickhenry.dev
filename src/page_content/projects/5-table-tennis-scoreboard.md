@@ -8,7 +8,7 @@ featured: false
 img: ./src/page_content/projects/5-table-tennis-scoreboard.png
 url: https://tabletennisscoreboard.com
 snippet: A single page app for keeping score in a game of table tennis. Built with Eleventy.
-index: 5
+index: 6
 # @formatter:on
 ---
 

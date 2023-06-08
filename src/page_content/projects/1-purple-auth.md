@@ -6,7 +6,7 @@ featured: true
 img: ./src/page_content/projects/1-purple-auth.png
 url: https://purpleauth.com
 snippet: A passwordless authentication service for web apps.
-index: 1
+index: 2
 ---
 As I have been building my various personal projects, I got tired of continually re-implementing 
 authentication. So I thought it would be useful to have a microservice to handle it. The external

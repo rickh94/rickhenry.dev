@@ -25,7 +25,7 @@ places and is adaptable to any number of projects (hopefully). #}
             {% else %}
             {% set row_order_class = "md:flex-row" %}
           {% endif %}
-          {{ index_project.project(project.data.title, project.templateContent, project.data.img, project.data.url, project.data.snippet, row_order_class) }}
+          {{ index_project.project(project.data.title, project.templateContent, project.data.img, project.data.url, project.data.snippet, project.data.video, row_order_class) }}
         </div>
       </div>
       {% if loop.index % 2 === 1 %}

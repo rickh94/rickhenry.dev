@@ -13,7 +13,7 @@
   <ul class="flex flex-col items-center list-none max-w-2xl mx-auto md:max-w-none md:mx-0">
     {% for project in collections.project |sortByIndex %}
       {% if project.data.featured %}
-        {{ index_project.project(project.data.title, project.templateContent, project.data.img, project.data.url, project.data.snippet) }}
+        {{ index_project.project(project.data.title, project.templateContent, project.data.img, project.data.url, project.data.snippet, project.data.video) }}
       {% endif %}
     {% endfor %}
   </ul>

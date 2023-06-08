@@ -4,11 +4,11 @@
 title: Flask WebAuthn Demo
 tags: project
 hidden: false
-featured: true
+featured: false
 img: ./src/page_content/projects/2-flask-webauthn.png
 url: https://flask-webauthn.rickhenry.dev
 snippet: A demonstration of device-based passwordless authentication using python.
-index: 2
+index: 3
 # @formatter:on
 ---
 
