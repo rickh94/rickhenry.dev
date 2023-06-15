@@ -4,6 +4,13 @@ tags: project
 hidden: false
 featured: false
 img: ./src/page_content/projects/4-bosnia-ist.png
+video:
+    - url: /assets/vid/projects/bosnia-ist/bosnia-ist.vp9.webm
+      type: video/webm; codecs=vp9,vorbis
+    - url: /assets/vid/projects/bosnia-ist/bosnia-ist.vp8.webm
+      type: video/webm; codecs=vp8,vorbis
+    - url: /assets/vid/projects/bosnia-ist/bosnia-ist.h264.mp4
+      type: video/mp4
 url: https://bosniaist.netlify.app
 snippet: Static Website for a Charity Outreach Trip
 index: 5

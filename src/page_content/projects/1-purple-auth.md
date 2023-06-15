@@ -4,6 +4,13 @@ tags: project
 hidden: false
 featured: true
 img: ./src/page_content/projects/1-purple-auth.png
+video: 
+    - url: /assets/vid/projects/purple-auth/purple-auth.vp9.webm
+      type: video/webm; codecs=vp9,vorbis
+    - url: /assets/vid/projects/purple-auth/purple-auth.vp8.webm
+      type: video/webm; codecs=vp8,vorbis
+    - url: /assets/vid/projects/purple-auth/purple-auth.h264.mp4
+      type: video/mp4
 url: https://purpleauth.com
 snippet: A passwordless authentication service for web apps.
 index: 2
@@ -13,4 +20,3 @@ authentication. So I thought it would be useful to have a microservice to handle
 page is very simple and straightforward, but it also has a robust backend and portal for
 adding authentication to any web app.
 
-[//]: # (img: https://f000.backblazeb2.com/file/rickhenrydev-files/img/projects/1-purple-auth.png)
