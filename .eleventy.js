@@ -113,6 +113,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLiquidShortcode("mdimage", mdImageShortcode);
   eleventyConfig.addJavaScriptFunction("mdimage", mdImageShortcode);
 
+
   return {
     dir: {
       input: "src",
