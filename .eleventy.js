@@ -5,6 +5,7 @@ const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const EleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const Image = require('@11ty/eleventy-img');
+// TODO: see if it can be successfully deployed with a github action, possibly updated frequently.
 
 function imageShortcode(src, cls, alt, sizes) {
   let options = {

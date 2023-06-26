@@ -1,0 +1,49 @@
+<main class="w-full relative pt-4" data-test="github-section" id="github-section">
+  <div class="absolute -z-10 w-full top-0 xl:h-64 overflow-y-hidden" aria-hidden="true">
+    {% include "waves/blue_top_waves1.njk" %}
+  </div>
+  <header class="flex w-full justify-center md:justify-start text-white mb-2 max-w-4xl mx-auto px-4 md:px-10 pt-16 xs:pt-32 lg:pt-48">
+    <h1 class="text-center md:text-left font-bold text-white text-2xl sm:text-4xl text-shadow">
+      GitHub
+    </h1>
+  </header>
+  <section class="flex w-full justify-center md:justify-start mb-4 md:mb-6 max-w-4xl mx-auto px-4 md:px-10">
+    <p class="text-center md:text-left font-bold text-white text-base md:text-lg text-shadow-sm">
+      If you want to look at some of my code, check out <a href="https://github.com/rickh94" class="underline hover:underline-offset-2" target="_blank" rel="noopener noreferrer">my GitHub</a>.
+    </p>
+  </section>
+  <ul class="flex flex-col items-center list-none max-w-2xl md:max-w-4xl mx-auto px-2 space-y-2">
+    <a href="https://github.com/rickh94/rickhenry.dev" target="_blank" rel="noopener noreferrer">
+      <li class="rounded bg-blue-800 text-white px-4 py-2 sm:px-6 sm:py-4 w-full flex items-center">
+        <div class="flex-1">
+          <h3 class="font-bold sm:text-2xl">rickh94/rickhenry.dev</h3>
+          <p>The source for this website! Built with 
+          <a href="https://11ty.dev" class="underline hover:underline-offset-2" target="_blank" rel="noopener noreferrer">11ty</a>, 
+          <a href="https://tailwindcss.com" class="underline hover:underline-offset-2" target="_blank" rel="noopener noreferrer">Tailwind CSS</a>, and 
+          <a href="https://alpinejs.dev" class="underline hover:underline-offset-2" target="_blank" rel="noopener noreferrer">Alpine JS</a>.</p>
+          <!-- TODO: get repo stats at build time -->
+        </div>
+        <a href="https://github.com/rickh94/rickhenry.dev" target="_blank" rel="noopener noreferrer" class="block flex-0">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+          </svg>
+        </a>
+      </li>
+    </a>
+    <a href="https://github.com/rickh94/ODetaM" target="_blank" rel="noopener noreferrer">
+      <li class="rounded bg-blue-800 text-white px-4 py-2 sm:px-6 sm:py-4 w-full flex items-center">
+        <div class="flex-1">
+          <h3 class="font-bold sm:text-2xl">rickh94/ODetaM</h3>
+          <p>A simple ODM (Object Document Mapper) for <a href="http://deta.sh" class="underline hover:underline-offset-2" target="_blank" rel="noopener noreferrer">Deta Base</a> 
+            using <a href="https://pydantic.dev" class="underline hover:underline-offset-2" target="_blank" rel="noopener noreferrer">pydantic</a>.
+          </p>
+        </div>
+        <a href="https://github.com/rickh94/rickhenry.dev" target="_blank" rel="noopener noreferrer" class="block flex-0">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+          </svg>
+        </a>
+      </li>
+    </a>
+  </ul>
+</main>

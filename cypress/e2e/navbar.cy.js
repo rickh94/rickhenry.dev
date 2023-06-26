@@ -34,7 +34,8 @@ describe("Navbar", () => {
                     cy.get("[data-test='nav-link-2']").should('be.visible').contains('Projects').invoke('attr', 'href').should('eq', '/projects/');
                     cy.get("[data-test='nav-link-3']").should('be.visible').contains('About').invoke('attr', 'href').should('eq', '/about/');
                     cy.get("[data-test='nav-link-4']").should('be.visible').contains('Blog').invoke('attr', 'href').should('eq', '/blog/');
-                    cy.get("[data-test='nav-cta-5']").should('be.visible').contains('Get Started').invoke('attr', 'href').should('eq', '/get-started/');
+                    cy.get("[data-test='nav-link-5']").should('be.visible').contains('GitHub').invoke('attr', 'href').should('eq', 'https://github.com/rickh94');
+                    cy.get("[data-test='nav-cta-6']").should('be.visible').contains('Get Started').invoke('attr', 'href').should('eq', '/get-started/');
                 })
                 context("goes to correct pages", () => {
                     if (loc !== '/projects/') {
@@ -57,7 +58,7 @@ describe("Navbar", () => {
                     }
                     if (loc !== '/get-started/') {
                         it("goes to the get started page", () => {
-                            cy.get("[data-test='nav-cta-5']").click();
+                            cy.get("[data-test='nav-cta-6']").click();
                             cy.location('pathname').should('eq', '/get-started/')
                         })
                     }
@@ -103,7 +104,8 @@ describe("Navbar", () => {
                     cy.get("[data-test='medium-nav-2']").should('be.visible').contains('Projects').invoke('attr', 'href').should('eq', '/projects/');
                     cy.get("[data-test='medium-nav-3']").should('be.visible').contains('About').invoke('attr', 'href').should('eq', '/about/');
                     cy.get("[data-test='medium-nav-4']").should('be.visible').contains('Blog').invoke('attr', 'href').should('eq', '/blog/');
-                    cy.get("[data-test='medium-cta-5']").should('be.visible').contains('Get Started').invoke('attr', 'href').should('eq', '/get-started/');
+                    cy.get("[data-test='medium-nav-5']").should('be.visible').contains('GitHub').invoke('attr', 'href').should('eq', 'https://github.com/rickh94');
+                    cy.get("[data-test='medium-cta-6']").should('be.visible').contains('Get Started').invoke('attr', 'href').should('eq', '/get-started/');
                 })
                 context("goes to correct pages", () => {
                     beforeEach(() => {
@@ -129,7 +131,7 @@ describe("Navbar", () => {
                     }
                     if (loc !== '/get-started/') {
                         it("goes to the get started page", () => {
-                            cy.get("[data-test='medium-cta-5']").click();
+                            cy.get("[data-test='medium-cta-6']").click();
                             cy.location('pathname').should('eq', '/get-started/')
                         })
                     }
@@ -177,7 +179,8 @@ describe("Navbar", () => {
                     cy.get("[data-test='mobile-nav-2']").should('be.visible').contains('Projects').invoke('attr', 'href').should('eq', '/projects/');
                     cy.get("[data-test='mobile-nav-3']").should('be.visible').contains('About').invoke('attr', 'href').should('eq', '/about/');
                     cy.get("[data-test='mobile-nav-4']").should('be.visible').contains('Blog').invoke('attr', 'href').should('eq', '/blog/');
-                    cy.get("[data-test='mobile-cta-5']").should('be.visible').contains('Get Started').invoke('attr', 'href').should('eq', '/get-started/');
+                    cy.get("[data-test='mobile-nav-5']").should('be.visible').contains('GitHub').invoke('attr', 'href').should('eq', 'https://github.com/rickh94');
+                    cy.get("[data-test='mobile-cta-6']").should('be.visible').contains('Get Started').invoke('attr', 'href').should('eq', '/get-started/');
                 })
                 context("goes to correct pages", () => {
                     beforeEach(() => {
@@ -203,7 +206,7 @@ describe("Navbar", () => {
                     }
                     if (loc !== '/get-started/') {
                         it("goes to the get started page", () => {
-                            cy.get("[data-test='mobile-cta-5']").click();
+                            cy.get("[data-test='mobile-cta-6']").click();
                             cy.location('pathname').should('eq', '/get-started/')
                         })
                     }

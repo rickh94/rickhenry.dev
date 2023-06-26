@@ -19,6 +19,12 @@
                class="inline lg:block px-2 py-1 text-center bg-white text-lg font-bold rounded text-black transition ease-in-out duration-300 hover:transform hover:-translate-y-1 focus:transform focus:-translate-y-1 selectable"
                data-test="nav-cta-{{ loop.index }}"
             >{{ entry.title }}</a>
+          {% elif entry.url.includes('http') %}
+            <a href="{{ entry.url | url }}" class="nav-link"
+              target="_blank"
+              rel="noopener noreferrer"
+               data-test="nav-link-{{ loop.index }}"
+            >{{ entry.title }}</a>
           {% else %}
             <a href="{{ entry.url | url }}" class="nav-link"
                data-test="nav-link-{{ loop.index }}"
