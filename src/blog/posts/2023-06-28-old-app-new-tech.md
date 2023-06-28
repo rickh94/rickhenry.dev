@@ -123,7 +123,7 @@ do not expect a white screen in between every action. They expect a cookie messa
 autoplay video ad, and newsletter pop-ups…I mean they expect reload-free operation
 that feels like using an app on their phone, which means AJAX! Yay javascript :|
 
-But there is an alternative. Popularize through sheer force of meme (and incredible
+But there is an alternative. Popularized through sheer force of meme (and incredible
 technology), [HTMX](https://htmx.org/) allows you to dynamically swap parts of
 your html page by making special requests (that it builds for you from html 
 attributes) and then sending html partials back to the client in response. So
