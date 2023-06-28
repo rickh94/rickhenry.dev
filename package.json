@@ -5,8 +5,8 @@
     "main": "index.js",
     "scripts": {
         "test": "cypress run",
-        "start": "eleventy --serve & tailwindcss -i styles/tailwind.pcss -c styles/tailwind.config.js -o _tmp/style.css --watch",
-        "build": "cross-env ELEVENTY_PRODUCTION=true eleventy & cross-env NODE_ENV=production tailwindcss -c styles/tailwind.config.js -i styles/tailwind.pcss -o _site/style.css -m",
+        "start": "eleventy --serve & postcss styles/tailwind.pcss -o _tmp/style.css --watch",
+        "build": "cross-env ELEVENTY_PRODUCTION=true eleventy & cross-env NODE_ENV=production postcss styles/tailwind.pcss -o _site/style.css",
         "cypress:open": "cypress open"
     },
     "keywords": [],
