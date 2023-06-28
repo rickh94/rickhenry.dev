@@ -11,8 +11,11 @@ date: 2023-06-28 19:46:00Z
 # Silly Goals
 
 The final site is [Silly Goals](https://sillygoals.com). It's basically a goal
-tracker/kanban application but more whimsical. Check it out, see if you like
-the performance. You can also look at the [finished code](https://github.com/rickh94/silly-goals).
+tracker/kanban application but more whimsical. Check it out, see how it feels. 
+There are no fancy deployments here. It's running in a docker container along
+with a few other applications on a free server in some Oracle Datacenter.
+(OCI gives you two free VPSs, who knew?)
+You can also look at the [finished code](https://github.com/rickh94/silly-goals).
 
 This is what I used to build a modern-feeling web application, but sticking to
 my goals of simplicity and writing **as little JavaScript as possible**.
@@ -88,7 +91,7 @@ I needed to grow up into Postgres for production. Turns out SQLite is incredibly
 stable, performant, and easy to manage. Especially for small applications that
 can be run on a single server (and actix can handle a lot of requests), it works
 amazingly well and saves you a lot of complexity. Remember, 
-[complexity very, very bad](https://grubrain.dev). 
+[complexity very, very bad](https://grugbrain.dev). 
 [YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it) is the best
 dumb acronym in software programming. Best of all, the database is just sitting
 there right next to your application, so the latency on queries is tiny. The 
