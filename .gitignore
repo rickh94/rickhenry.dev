@@ -3,3 +3,8 @@ _tmp/
 
 # Local Netlify folder
 .netlify
+
+# Devenv
+.devenv*
+devenv.local.nix
+

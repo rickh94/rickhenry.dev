@@ -36,7 +36,7 @@ time tracking down bugs.
 The documentation could arguably be more… detailed, but it's flexible, has
 a very nice dependency model, and helps you ensure type safety throughout
 your application. It's a lot like using the [Flask](https://flask.palletsprojects.com/)
-framework, but faster, typesafe, and asynchronous. The official extensions are
+framework, but faster, type-safe, and asynchronous. The official extensions are
 great, or just build your own stuff as needed. It does all your usual routing
 in a nice way. I built the application at first in just a normal
 Get-Post-Redirect style, handling all the routes and forms and session data
