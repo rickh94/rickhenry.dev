@@ -8,7 +8,7 @@
 
 <div x-cloak x-data class="z-20">
 {#  TODO: Double check vertical padding classes #}
-  <header data-test="topbar" class="flex justify-between items-center px-4 lg:px-8 lg:pt-4 pt-2 h-16 transition ease-in-out duration-200" :class="$store.menu.open ? 'xs:filter xs:blur-sm' : ''" x-cloak x-data>
+  <header data-test="topbar" class="flex justify-between items-center px-4 lg:px-8 lg:pt-4 pt-2 h-16 transition ease-in-out duration-200" x-cloak x-data>
     {% include "components/sitetitle.njk" %}
     {#  Desktop nav menu #}
     <nav class="hidden lg:flex space-x-1 lg:space-x-2 items-center" aria-label="primary" data-test="desktop-nav">
@@ -48,7 +48,7 @@
   </header>
 
   {#  Medium nav menu with overlay and modal only on small and medium screens #}
-  <div class="fixed top-0 left-0 z-50 bg-slate-500 bg-opacity-70 w-screen h-screen hidden xs:flex items-center justify-center lg:hidden"
+  <div class="fixed top-0 left-0 z-50 bg-slate-500 bg-opacity-70 w-screen h-screen hidden xs:flex items-center justify-center lg:hidden backdrop-blur"
        x-show="$store.menu.open"
        x-data
        x-transition:enter="transition ease-out duration-200"

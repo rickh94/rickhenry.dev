@@ -13,7 +13,7 @@
   Skip to Content
 </a>
 {% include "components/navbar.njk" %}
-<div class="transition ease-in-out" :class="$store.menu.open ? 'xs:filter xs:blur-sm' : ''" x-data>
+<div class="transition ease-in-out"> 
   {{ content | safe }}
   {% include "components/footer.njk" %}
 </div>
