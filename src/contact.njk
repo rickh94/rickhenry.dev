@@ -1,0 +1,12 @@
+---
+title: Contact Me
+description: Contact form for Rick Henry Development
+layout: layouts/main.njk
+---
+
+{% import "macros/hero.njk" as hero_macros %}
+{{ hero_macros.hero(hero_macros.hero_title("Contact Me", "If you have an issue with one of my websites, or just want to say hi, fill out the form below. I'll get back to you soon!"), background="blue") }}
+
+<div class="max-w-4xl px-4 mx-auto xs:mt-16">
+  {% include "components/contact_form.njk" %}
+</div>
