@@ -85,6 +85,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({
     "./node_modules/alpinejs/dist/cdn.min.js": "./js/alpine.js",
+    "./node_modules/alpinejs/dist/cdn.min.js": "./js/alpine.js",
   });
 
   eleventyConfig.addNunjucksFilter("niceDate", (value) => {
