@@ -5,7 +5,22 @@
 <title>{{ title | appendSiteTitle }}</title>
 {% if description %}
   <meta name="description" content="{{ description }}">
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="twitter:description" content="{{ description }}" />
+{% else %}
+  <meta property="og:description" content="Rick Henry development website" />
+  <meta property="twitter:description" content="Rick Henry development website" />
 {% endif %}
+<meta property="og:title" content="{{ title | appendSiteTitle }}" />
+<meta property="og:url" content="https://rickhenry.dev" />
+<meta
+  property="og:image"
+  content="https://og.rickhenry.dev/devsite/opengraph-image"
+/>
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ title | appendSiteTitle }}" />
+<meta name="twitter:image" content="https://og.rickhenry.dev/devsite/opengraph-image" />
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
 <link rel="stylesheet" href="/style.css?v={% version %}">
 <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">

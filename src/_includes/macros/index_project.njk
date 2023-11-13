@@ -66,7 +66,7 @@
                 x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
                 <div>
-                  <video class="rounded-md shadow-md w-full" controls preload="metadata">
+                  <video class="rounded-md shadow-md w-full" controls preload="none">
                   {% for item in video %}
                     <source src="{{ item.url }}" type="{{ item.type }}">
                   {% endfor %}
